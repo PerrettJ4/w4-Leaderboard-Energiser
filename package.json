@@ -1,0 +1,37 @@
+{
+  "name": "w4-hackathon",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon -r dotenv/config ./bin/www",
+    "dbcreatetable": "node -r dotenv/config ./db/scripts/createTable.js",
+    "dbpopulatetable": "node -r dotenv/config ./db/scripts/populateTable.js",
+    "dbdeletetable": "node -r dotenv/config ./db/scripts/deleteTable.js",
+    "dbresettable": "npm run dbdeletetable && npm run dbcreatetable && npm run dbpopulatetable"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1",
+    "pg": "^8.7.1"
+  },
+  "description": "We will be building our first full stack app to keep track of energiser scores. It will be a chance to embed everything we've learned so far and practice breaking down problems into solvable chunks.",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SchoolOfCode/w4d5_full-stack-hackathon-team-binturong.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SchoolOfCode/w4d5_full-stack-hackathon-team-binturong/issues"
+  },
+  "homepage": "https://github.com/SchoolOfCode/w4d5_full-stack-hackathon-team-binturong#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}

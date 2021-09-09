@@ -1,0 +1,167 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: auto;
+  text-align: center;
+  background-color: #ededed;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 200px 1fr 200px;
+  grid-template-areas: "header header header" "form leaderboard filtered" "footer footer footer";
+}
+/* Header */
+header {
+  grid-area: header;
+}
+#title {
+  font-family: "Rampart One", cursive;
+  color: #4c1036;
+  font-size: 50px;
+}
+/* Form */
+section #form {
+  grid-area: form;
+  display: flex;
+  width: 50%;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+form #form {
+  align-self: start;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+}
+form div {
+  display: flex;
+  margin-left: 20px;
+}
+#date {
+  height: 46pxx;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  background-color: whitesmoke;
+}
+#energiser {
+  height: 50px;
+  text-align: center;
+  background-color: whitesmoke;
+}
+/* Leaderboard */
+#leaderboard {
+  grid-area: leaderboard;
+  display: flex;
+}
+#main-leaderboard {
+  margin-top: 76px;
+}
+/* Filtered */
+section #filtered {
+  grid-area: filtered;
+  display: flex;
+}
+
+/* Buttons */
+.energiser {
+  background-color: #0a54ff;
+  color: white;
+  box-shadow: 0 0 20px white;
+  width: auto;
+  height: 50px;
+  font-size: 16px;
+  border-radius: 25px;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+/* main Parent Table */
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 1.2em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Table Header style <th> */
+.content-table thead tr {
+  background-color: #72195a;
+  color: white;
+  text-align: left;
+}
+/* table cells */
+.content-table th,
+.content-table td {
+  width: fit-content;
+  padding: 18px 22.5px;
+}
+
+/* finishing touches on borders */
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+.content-table tbody tr:nth-of-type(even) {
+  background-color: whitesmoke;
+}
+.content-table tbody tr:nth-of-type(odd) {
+  background-color: #c6d8ff;
+}
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #72195a;
+}
+
+a {
+  color: #00b7ff;
+}
+
+label {
+  display: block;
+  font: 1rem "Fira Sans", sans-serif;
+}
+
+input,
+label {
+  margin: 0.4rem 0;
+}
+
+/* CREATING TWO TABLES WHEN SCREEN IS AT 66% SIZE */
+@media screen and (max-width: 1700px) {
+  body {
+    /* formalities^^ */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 1fr 200px;
+    grid-template-areas:
+      "header header"
+      "form filtered"
+      "footer footer";
+  }
+  #leaderboard {
+    display: none;
+  }
+}
+@media screen and (max-width: 1200px) {
+  body {
+    /* formalities^^ */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 1fr 200px;
+    grid-template-areas:
+      "header"
+      "filtered"
+      "footer";
+  }
+  #leaderboard {
+    display: none;
+  }
+  /* #form {
+    display: none;
+  } */
+  #filtered {
+    display: none;
+  }
+}

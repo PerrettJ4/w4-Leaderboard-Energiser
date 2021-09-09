@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./stylesheets/style.css" />
+    <title>Energiser Leaderboard</title>
+  </head>
+  <body>
+    <header>
+      <h1 id="title" class="header">Energiser Score Leaderboard!</h1>
+    </header>
+    <section id="form">
+      <form id="form">
+        <!-- <label for="name">Bootcamper: </label>
+        <input type="text" id="name" placeholder="Name" /> -->
+
+        <select name="energiser" id="energiser">
+          <option value="" disabled selected>Select Energiser</option>
+          <option value="Art Attack">Art Attack</option>
+          <option value="Flap and Dash">Flap and Dash</option>
+          <option value="Scattergories">Scattergories</option>
+          <option value="Tenable">Tenable</option>
+          <option value="Gartic">Gartic</option>
+          <option value="Mime Your Lunch">Mime Your Lunch</option>
+        </select>
+        <div>
+          <!-- <label for="score">Score: </label>
+        <input type="number" id="score" /> -->
+
+          <input
+            type="date"
+            id="date"
+            name="trip-start"
+            value="2021-08-20"
+            min="2021-08-19"
+            max="2030-12-31"
+          />
+          <button type="submit" class="energiser" id="submit">SUBMIT</button>
+        </div>
+      </form>
+      <!-- FORM TABLE -->
+      <table id="form-table" class="content-table">
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>Bootcamper</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody class="form-table-body" id="form-table-body"></tbody>
+      </table>
+    </section>
+    <!-- LEADERBOARD -->
+    <section id="leaderboard">
+      <table id="main-leaderboard" class="content-table">
+        <thead>
+          <tr>
+            <th>Bootcamper</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody class="leaderboard-body" id="leaderboard-body"></tbody>
+      </table>
+    </section>
+    <!-- FILTERED -->
+    <section id="filtered">
+      <button class="energiser" onclick="createTableBy('Art Attack')">
+        Art Attack
+      </button>
+      <button class="energiser" onclick="createTableBy('Flap and Dash')">
+        Flap and Dash
+      </button>
+      <button class="energiser" onclick="createTableBy('Scattergories')">
+        Scattergories
+      </button>
+      <button class="energiser" onclick="createTableBy('Tenable')">
+        Tenable
+      </button>
+      <button class="energiser" onclick="createTableBy('Gartic')">
+        Gartic
+      </button>
+      <table class="content-table" id="filtered-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Energiser</th>
+            <th>Bootcamper</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody class="filtered-table-body"></tbody>
+      </table>
+    </section>
+    <footer></footer>
+    <script src="./javascripts/main.js"></script>
+  </body>
+</html>
