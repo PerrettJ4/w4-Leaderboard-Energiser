@@ -104,7 +104,7 @@ function formatDate(date) {
 // pas into create tabkle function
 
 async function getData() {
-  const response = await fetch("http://localhost:3000/scores");
+  const response = await fetch(process.env.api_url);
   console.log(response);
   const data = await response.json();
   console.log(data);
@@ -140,7 +140,7 @@ async function addScore(event) {
     score: scoreField.value,
   };
   console.log(scoreData);
-  const response = await fetch("http://localhost:3000/scores", {
+  const response = await fetch(process.env.api_url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
