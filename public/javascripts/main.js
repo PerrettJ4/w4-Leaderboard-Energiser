@@ -104,7 +104,9 @@ function formatDate(date) {
 // pas into create tabkle function
 
 async function getData() {
-  const response = await fetch(process.env.api_url);
+  const response = await fetch(
+    "https://leaderboard-energiser-app.herokuapp.com/scores"
+  );
   console.log(response);
   const data = await response.json();
   console.log(data);
@@ -140,13 +142,16 @@ async function addScore(event) {
     score: scoreField.value,
   };
   console.log(scoreData);
-  const response = await fetch(process.env.api_url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(scoreData),
-  });
+  const response = await fetch(
+    "https://leaderboard-energiser-app.herokuapp.com/scores",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(scoreData),
+    }
+  );
   console.log(response);
 }
 
